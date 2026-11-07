@@ -4,6 +4,7 @@ COPY . .
 RUN go build -o app .
 
 FROM alpine:latest
+LABEL org.opencontainers.image.revision="noop-2026-11-06"
 WORKDIR /app
 COPY --from=builder /app/app .
 
